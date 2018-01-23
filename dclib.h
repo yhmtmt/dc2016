@@ -78,6 +78,9 @@ bool load_ais_record(ifstream & fin, aisdata & data)
     p++;
   }
   *p = '\0';
+
+  if(ntoks == 0)
+    return false;
   
   // converting characters into values
   data.mmsi = strtoul(token[1], (char**)NULL, 10);
